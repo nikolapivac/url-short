@@ -7,7 +7,8 @@ function App() {
 
   const shorten = async (e) => {
     e.preventDefault();
-
+    
+    // send the long URL to the server 
     const response = await fetch("http://localhost:5001/api/url/shorten", {
       method: "POST",
       headers: {
@@ -16,6 +17,7 @@ function App() {
       body: JSON.stringify({longUrl})
     });
 
+    // get the short URL
     const data = await response.json();
     setShortUrl(data.shortUrl);
   }
@@ -24,15 +26,16 @@ function App() {
     <div className="main">
 
       <h1 className="title">URL shortener</h1>
-      <form onSubmit={shorten}>
-        <label>Enter your URL here:</label>
-        <input type="text" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} />
-        <button type="submit">SHORTEN</button>
+      <form className="form" onSubmit={shorten}>
+          <div className="input-container">
+            <input type="text" id="input" required="" placeholder="Enter URL" value={longUrl} onChange={(e) => setLongUrl(e.target.value)} />
+          </div>
+          <button className="submitBtn" type="submit">SHORTEN</button>
       </form>
 
       {shortUrl && (
         <div className="short">
-          Short URL: <a href={shortUrl}>{shortUrl}</a>
+          Short URL:    <a href={shortUrl}>{shortUrl}</a>
         </div>
       )}
 

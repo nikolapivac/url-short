@@ -1,1 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600&family=Poiret+One&display=swap');
 
+* {
+    font-family: 'Outfit', sans-serif;
+    background-color: rgb(149, 165, 149);
+    --dark-green: rgb(56, 63, 56);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.title {
+    letter-spacing: 2px;
+    color: var(--dark-green);
+}
+
+.form {
+    display: flex;
+    gap: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-container #input{
+    width: 600px;
+    height: 36px;
+    border-radius: 14px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    border: 2px solid var(--dark-green);
+}
+
+.submitBtn {
+    border-radius: 10px;
+    letter-spacing: 1px;
+    border: 2px solid var(--dark-green);
+    background-color: whitesmoke;
+    transition: 0.25s all ease-in-out;
+}
+
+.submitBtn:hover{
+    cursor: pointer;
+    background-color: var(--dark-green);
+    color: whitesmoke;
+}
+
+.short {
+    width: 400px;
+    background-color: var(--dark-green);
+    color: whitesmoke;
+    padding: 16px;
+    border-radius: 16px;
+    letter-spacing: 2px;
+}
+
+a {
+    color: rgb(149, 165, 149);
+    background-color: var(--dark-green);
+    letter-spacing: 1px;
+}
