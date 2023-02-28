@@ -1,5 +1,7 @@
 import express from "express";
 import connectToDB from "./config/db.js"
+import indexRoutes from "./routes/index.js"
+import urlRoutes from "./routes/url.js"
 
 // initializing the app
 const app = express();
@@ -10,5 +12,10 @@ connectToDB();
 // allows the server to accept json data
 app.use(express.json({ extended: false }));
 
+// defining the routes
+app.use('/', indexRoutes);
+app.use('/api/url', urlRoutes);
+
+// start listening
 const PORT = 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
