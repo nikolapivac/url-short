@@ -1,4 +1,0 @@
-{
-    "mongoURI": "mongodb+srv://npivac6:npivac6x123@cluster0.rlgpotr.mongodb.net/?retryWrites=true&w=majority",
-    "baseUrl": "http://localhost:5001"
-}
